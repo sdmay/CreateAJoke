@@ -15,7 +15,8 @@ import { CardHoverDirective } from './jokelist/jokelist.component';
 import { ObserveComponent } from './observe/observe.component';
 import { AsyncComponent } from './async/async.component';
 import { BatteryComponent } from './battery/battery.component';
-import { GeneticComponent } from './genetic/genetic.component'
+import { GeneticComponent } from './genetic/genetic.component';
+import {HealthService} from './services/health.service';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { GeneticComponent } from './genetic/genetic.component'
     SharedModule
   ],
   providers: [
+    HealthService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
