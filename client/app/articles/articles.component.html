@@ -1,0 +1,16 @@
+
+<div class="container"
+     *ngFor="let a of articles"
+     >
+  <div class="card card-block card-outline-primary" *ngIf="a.image === 'NONE'">
+  <h1 appCardHover>{{a.title}}</h1>
+  <h2 *ngIf="a.image === 'NONE'" hidden>{{a.image}}</h2>
+  <h3>{{a.words}}</h3>
+    <h4>Last updated: {{a.dater | date: 'short'}}</h4>
+</div>
+  <div class="card card-block card-outline-danger" *ngIf="a.image != 'NONE'">
+    <h1>{{a.title}}</h1>
+    <h2>{{a.image}}</h2>
+    <h3 *ngIf="a.words === 'NONE'" hidden>{{a.words}}</h3>
+  </div>
+</div>

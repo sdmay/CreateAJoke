@@ -1,11 +1,20 @@
 <app-jokeform
   (jokeCreated)="addJoke($event)"></app-jokeform>
-<div class="card card-block"
+<div class="card card-block" [appCardHover]="{querySelector: 'p'}"
      *ngFor="let joke of jokes">
-  <h4 class="card-title">{{joke.setup}}</h4>
-  <p class="card-text" [hidden]="joke.hide">{{joke.punchline}}</p>
-<a class="btn btn-primary" *ngIf="joke.hide" (click)="joke.toggle()">Tell Me!</a>
-  <a class="btn btn-outline-primary" *ngIf="!joke.hide" (click)="joke.toggle()">Close Me!</a>
-  <a class="btn btn-outline-danger" *ngIf="!joke.hide" (click)="deleteJoke(joke )">Delete Me!</a>
+  <h4 class="card-title" >{{joke.setup}}</h4>
+  <p class="card-text" [style.display]="'none'">{{joke.punchline}}</p>
+<!--<a class="btn btn-primary" *ngIf="joke.hide" (click)="joke.toggle()">Tell Me!</a>-->
+  <!--<a class="btn btn-outline-primary" *ngIf="!joke.hide" (click)="joke.toggle()">Close Me!</a>-->
+  <!--<a class="btn btn-outline-danger" *ngIf="!joke.hide" (click)="deleteJoke(joke )">Delete Me!</a>-->
 
 </div>
+
+<!--<div class="container">-->
+  <!--<p (mouseover)="over()">asjkdgfDGSjgsdkjS</p>-->
+<!--</div>-->
+
+<!--<img [ccRollover]="{-->
+  <!--'initial':'https://unsplash.it/200/300?image=201',-->
+  <!--'over':'https://unsplash.it/200/300?image=202'-->
+<!--}"/>-->

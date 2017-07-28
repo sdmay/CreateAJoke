@@ -1,0 +1,11 @@
+<ul *ngFor="let person of people">
+  <li [ngStyle]="{'font-size.px': 24}"
+    [style.background-color]="getColor(person.country)"
+  [style.color]="getStyleColor(person.country)"
+  [style.font-size.px]="changeAgeFonstSize(person.country)"
+  [ngClass]="{'uk':person.country === 'UK',
+  'boxing':person.country === 'USA'
+  }">
+    {{person.name}} {{person.country}} ({{person.age}})
+  </li>
+</ul>
