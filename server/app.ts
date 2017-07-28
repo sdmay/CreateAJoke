@@ -18,6 +18,7 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', 'https://ancient-retreat-41425.herokuapp.com');
 
   res.header('Access-Control-Allow-Headers', 'accept, authorization, content-type, x-requested-with');
   res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
@@ -38,6 +39,11 @@ app.use(function(req, res, next) {
 //   setRoutes(app);
 
   app.get('/*', function(req, res) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', 'https://ancient-retreat-41425.herokuapp.com');
+
+    res.header('Access-Control-Allow-Headers', 'accept, authorization, content-type, x-requested-with');
+    res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 
