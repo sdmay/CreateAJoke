@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Http} from '@angular/http';
+import {Http, Headers} from '@angular/http';
+import * as cors from 'cors';
 
 @Component({
   selector: 'app-genetic',
@@ -9,6 +10,7 @@ import {Http} from '@angular/http';
 export class GeneticComponent implements OnInit {
 muscleSearch = 'https://api.23andme.com/3/report/wellness.muscle_composition/';
 m;
+headers;
 
 
 constructor(private http: Http) { }
@@ -19,6 +21,7 @@ constructor(private http: Http) { }
   this.getMuscle();
   }
 getMuscle(): any {
+
     return this.http.get(this.muscleSearch).subscribe(x => {
       console.log('init');
       console.log(x);
