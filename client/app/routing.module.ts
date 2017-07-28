@@ -8,6 +8,7 @@ import {ArticlesComponent} from './articles/articles.component';
 import {ObserveComponent} from './observe/observe.component'
 import {AsyncComponent} from './async/async.component';
 import {BatteryComponent} from './battery/battery.component';
+import {GeneticComponent} from './genetic/genetic.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'joke', pathMatch: 'full' },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'articles', component: ArticlesComponent},
   { path: 'observe', component: ObserveComponent},
   { path: 'async', component: AsyncComponent },
-  { path: 'bat', component: BatteryComponent }
+  { path: 'bat', component: BatteryComponent },
+  {path: 'gen', component: GeneticComponent}
 ];
 
 @NgModule({

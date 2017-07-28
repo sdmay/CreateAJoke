@@ -14,7 +14,8 @@ import { ArticlesComponent } from './articles/articles.component';
 import { CardHoverDirective } from './jokelist/jokelist.component';
 import { ObserveComponent } from './observe/observe.component';
 import { AsyncComponent } from './async/async.component';
-import { BatteryComponent } from './battery/battery.component'
+import { BatteryComponent } from './battery/battery.component';
+import { GeneticComponent } from './genetic/genetic.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BatteryComponent } from './battery/battery.component'
     CardHoverDirective,
     ObserveComponent,
     AsyncComponent,
-    BatteryComponent
+    BatteryComponent,
+    GeneticComponent
   ],
   imports: [
     RoutingModule,

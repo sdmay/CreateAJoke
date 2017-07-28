@@ -18,10 +18,10 @@ d = 'http://freegeoip.net/json/';
 c;
 p;
 results;
-weather = 'http://api.openweathermap.org/data/2.5/weather?q=London';
+weather = 'http://api.openweathermap.org/data/2.5/weather?q=London&APPID=9cd30a7407eff78fc8377ef08f5b6ffd';
 w;
 first = 'http://api.openweathermap.org/data/2.5/weather?q=';
-app = '&APPID=9cd30a7407eff78fc8377ef08f5b6ffd'
+app = '&APPID=9cd30a7407eff78fc8377ef08f5b6ffd';
   constructor(private http: Http) {
   }
 
