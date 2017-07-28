@@ -17,10 +17,9 @@ app.use(cors());
 app.use(morgan('dev'));
 
 app.use(function(req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'accept, authorization, content-type, x-requested-with');
   res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
-  res.setHeader('Access-Control-Allow-Origin', 'https://ancient-retreat-41425.herokuapp.com');
-
   next();
 });
 
