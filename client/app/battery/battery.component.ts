@@ -18,17 +18,16 @@ d = 'http://freegeoip.net/json/';
 c;
 p;
 results;
-weather = 'http://samples.openweathermap.org/data/2.5/weather?q=London';
+weather = 'http://api.openweathermap.org/data/2.5/weather?q=London';
 w;
+first = 'http://api.openweathermap.org/data/2.5/weather?q=';
+app = '&APPID=9cd30a7407eff78fc8377ef08f5b6ffd'
   constructor(private http: Http) {
   }
 
   ngOnInit() {
-    console.log(this.d);
-    console.log(this.loc);
     this.location(this.loc);
     this.googleLocate();
-    this.getWeather();
   }
 
   location(loc): any {
@@ -37,18 +36,15 @@ w;
   googleLocate(): any {
     return this.http.get(this.d).subscribe(data => {
       // Read the result field from the JSON response.
-      console.log(data);
       this.results = data.json();
-      console.log(this.results);
       this.p = this.results;
-      console.log(this.p)
+      this.getWeather(this.p.city);
     });
   }
-  getWeather() {
-    return this.http.get(this.weather).subscribe(data =>{
-      console.log(data);
-      console.log('init')
-      this.w = data;
+  getWeather(city) {
+    return this.http.get(this.first + city + this.app).subscribe(data => {
+      console.log(data.json());
+      this.w = data.json();
     })
   }
 }
