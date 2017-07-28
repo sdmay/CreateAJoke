@@ -19,7 +19,7 @@ app.use(morgan('dev'));
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Headers', 'accept, authorization, content-type, x-requested-with');
   res.setHeader('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
-  res.setHeader('Access-Control-Allow-Origin', req.header('origin'));
+  res.setHeader('Access-Control-Allow-Origin', 'https://ancient-retreat-41425.herokuapp.com');
 
   next();
 });
@@ -38,9 +38,6 @@ app.use(function(req, res, next) {
 //   setRoutes(app);
 
   app.get('/*', function(req, res) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:4200");
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header("Access-Control-Allow-Headers", "X-Requested-With,     Content-Type");
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 
