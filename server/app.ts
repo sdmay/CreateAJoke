@@ -7,6 +7,9 @@ import * as path from 'path';
 import * as cors from 'cors';
 
 const app = express();
+const allowedOrigins = ['http://localhost:3000',
+  'http://localhost:4200',
+  'https://ancient-retreat-41425.herokuapp.com'];
 dotenv.load({ path: '.env' });
 app.set('port', (process.env.PORT || 3000));
 
