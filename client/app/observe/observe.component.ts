@@ -22,7 +22,10 @@ jsonVal = {
   }
 
   ngOnInit() {
-    console.log(this.jsonVal)
+    // console.log(this.jsonVal)
+
+    // console.log(this.fb())
+  }
 
   }
 
@@ -35,4 +38,4 @@ jsonVal = {
   //   });
   //
   // }
-}
+

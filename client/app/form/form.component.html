@@ -1,0 +1,74 @@
+<form novalidate [formGroup]="myForm">
+  <!--<pre>{{myForm.value | json}}</pre>-->
+<fieldset formGroupName="name">
+  <div class="form-group">
+    <label>First Name</label>
+    <input type="text"
+           class="form-control"
+    formControlName="firstName"
+    required>
+  </div>
+  <div class="form-group">
+    <label>Last Name</label>
+    <input type="text"
+           class="form-control"
+    formControlName="lastName"
+    required>
+  </div>
+</fieldset>
+
+<div class="form-group" [ngClass]="{
+'has-danger': myForm.controls.email.dirty && myForm.controls.email.invalid,
+'has-success': myForm.controls.email.valid && myForm.controls.dirty
+}">
+  <label>Email</label>
+  <input type="email"
+         class="form-control"
+  formControlName="email"
+  required>
+</div>   <div class="form-group" [ngClass]="{
+'has-danger': password.invalid && password.dirty }">
+  <label>Password</label>
+  <div class="form-control-feedback"
+       *ngIf="password.errors && (password.dirty || password.touched)">
+<p *ngIf="password.errors.required">This field required</p>
+    <p *ngIf="password.errors.minlength">Too SHORT! W need another
+    {{password.errors.minlength.requiredLength - password.errors.minlength.actualLength}}
+    characters please.</p>
+</div>
+
+  <input type="password"
+         class="form-control"
+  formControlName="password"
+  required>
+</div>
+<div class="form-group">
+  <label>Language</label>
+  <select class="form-control"
+  formControlName="language"
+  required>
+    <option value="">Please select a language</option>
+    <option *ngFor="let l of langs"
+            [value]="l">
+      {{l}}
+    </option>
+  </select>   </div>
+  <div class="form-group">
+    <label for="exampleTextarea">Example textarea</label>
+    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+  </div>
+</form>
+<!--<pre>{{myForm.value | json}}</pre></form>
+<pre>Dirty? {{myForm.controls.email.dirty}}</pre>
+<pre>Pristine? {{myForm.controls.email.pristine}}</pre>
+<pre>Touched? {{myForm.controls.email.touched}}</pre>
+<pre>Valid? {{myForm.controls.email.valid}}</pre>
+<pre>Invalid? {{myForm.controls.email.invalid}}</pre>-->
+<pre>{{password.touched}}{{password.dirty}}</pre>
+  <!--<pre>{{password.errors.required    }}</pre>-->
+  <!--<pre>{{password.errors.minLength}}</pre>-->
+  <!--<pre>{{password.minLength.requiredLength}}-->
+<!--<pre>{{password.errors.minLength}} loop</pre>-->
+  {{password.errors | json}}
+
+  <!--{{password.errors.minlength.requiredLength}}-->

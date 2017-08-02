@@ -1,3 +1,7 @@
+<button md-button
+        [routerLink]="['/speakers', {outlets: {'list': ['speakersList'], 'bio': ['none']}}]">
+  Speakers
+</button>
 <app-jokeform
   (jokeCreated)="addJoke($event)"></app-jokeform>
 <div class="card card-block" [appCardHover]="{querySelector: 'p'}"

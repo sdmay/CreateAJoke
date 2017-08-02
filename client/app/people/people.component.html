@@ -1,0 +1,22 @@
+<div *ngFor="let p of peeps | sort: 'first_name'">
+  <div class="card card-block"  [ngClass]="{
+  'card-outline-primary': p.gender === 'Male',
+  'card-outline-danger': p.gender === 'Female'}">
+ID:  {{p.id}}<br/>
+First Name:  {{p.first_name}}<br/>
+Last Name:  {{p.last_name}}<br/>
+  Gender: {{p.gender}}<br/>
+  Email: {{p.email}}
+</div>
+</div>
+<div *ngFor="let p of pepe">
+  <div class="card card-block"  [ngClass]="{
+  'card-outline-danger': p.gender === 'Male',
+  'card-outline-succes': p.gender === 'Female'}">
+    ID:  {{p.id}}<br/>
+    First Name:  {{p.first_name}}<br/>
+    Last Name:  {{p.last_name}}<br/>
+    Gender: {{p.gender}}<br/>
+    Email: {{p.email}}
+  </div>
+</div>

@@ -9,7 +9,12 @@ import 'rxjs/add/operator/catch';
   styleUrls: ['./battery.component.scss']
 })
 export class BatteryComponent implements OnInit {
+
   loc = navigator.geolocation;
+  host = location.host;
+  platform = navigator.platform;
+  product = navigator.product;
+  // con = navigator.connection;
   yo;
   z = 'AIzaSyBuvbhmIR1SMnfdHEJ0Kqd_nT4XZEwN4yA';
   a = 'https://www.googleapis.com/geolocation/v1/geolocate?key=';
@@ -28,6 +33,7 @@ app = '&APPID=9cd30a7407eff78fc8377ef08f5b6ffd';
   ngOnInit() {
     this.location(this.loc);
     this.googleLocate();
+
   }
 
   location(loc): any {
@@ -47,6 +53,7 @@ app = '&APPID=9cd30a7407eff78fc8377ef08f5b6ffd';
       this.w = data.json();
     })
   }
+
 }
 // getComments() : Observable<Comment[]>{
 //   // ...using get request

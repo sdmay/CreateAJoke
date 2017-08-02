@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { ToastComponent } from './toast/toast.component';
 import { LoadingComponent } from './loading/loading.component';
+import { SortingPipe } from './sorting.pipe';
 
 @NgModule({
   imports: [
@@ -21,14 +22,16 @@ import { LoadingComponent } from './loading/loading.component';
     HttpModule,
     // Shared Components
     ToastComponent,
-    LoadingComponent
+    LoadingComponent,
+    SortingPipe
   ],
   declarations: [
     ToastComponent,
-    LoadingComponent
+    LoadingComponent,
+    SortingPipe
   ],
   providers: [
     ToastComponent
-  ]
+  ],
 })
 export class SharedModule { }

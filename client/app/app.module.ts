@@ -17,6 +17,14 @@ import { AsyncComponent } from './async/async.component';
 import { BatteryComponent } from './battery/battery.component';
 import { GeneticComponent } from './genetic/genetic.component';
 import {HealthService} from './services/health.service';
+import { FormComponent } from './form/form.component';
+import { SpeakerComponent } from './speaker/speaker.component';
+import { BioComponent } from './speaker/bio/bio.component';
+import { SpeakersListComponent } from './speaker/speakers-list/speakers-list.component';
+import {SpeakerService} from './shared/speaker.service';
+import { PeopleComponent } from './people/people.component';
+import {PeepService} from './services/peep.service'
+import {SortingPipe} from "./shared/sorting.pipe";
 
 @NgModule({
   declarations: [
@@ -30,14 +38,23 @@ import {HealthService} from './services/health.service';
     ObserveComponent,
     AsyncComponent,
     BatteryComponent,
-    GeneticComponent
+    GeneticComponent,
+    FormComponent,
+    SpeakerComponent,
+    BioComponent,
+    SpeakersListComponent,
+    PeopleComponent
   ],
   imports: [
     RoutingModule,
     SharedModule
   ],
   providers: [
-    HealthService
+    HealthService,
+    SpeakerService,
+    PeepService,
+    SortingPipe
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]

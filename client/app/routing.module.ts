@@ -9,6 +9,11 @@ import {ObserveComponent} from './observe/observe.component'
 import {AsyncComponent} from './async/async.component';
 import {BatteryComponent} from './battery/battery.component';
 import {GeneticComponent} from './genetic/genetic.component';
+import {FormComponent} from './form/form.component';
+import {BioComponent} from './speaker/bio/bio.component';
+import {SpeakersListComponent} from './speaker/speakers-list/speakers-list.component';
+import { SpeakerComponent} from './speaker/speaker.component';
+import {PeopleComponent} from "./people/people.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'joke', pathMatch: 'full' },
@@ -16,10 +21,16 @@ const routes: Routes = [
   { path: 'switch', component: NgSwitchComponent},
   { path: 'style', component: NgstyleComponent},
   { path: 'articles', component: ArticlesComponent},
-  { path: 'observe', component: ObserveComponent},
+  { path: 'pipes', component: ObserveComponent},
   { path: 'async', component: AsyncComponent },
   { path: 'bat', component: BatteryComponent },
-  {path: 'gen', component: GeneticComponent}
+  {path: 'gen', component: GeneticComponent},
+  {path: 'form', component: FormComponent},
+  { path: 'speakers', component: SpeakerComponent, children: [
+    { path: 'speakersList', component: SpeakersListComponent, outlet: 'list' },
+    { path: ':id', component: BioComponent, outlet: 'bio' }
+  ] },
+  {path: 'people', component: PeopleComponent}
 ];
 
 @NgModule({

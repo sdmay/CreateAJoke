@@ -1,0 +1,11 @@
+<div *ngIf="!currentSpeaker" class="card card-block">
+  Please select a speaker
+  No speaker selected
+</div>
+
+<div class="card card-block" *ngIf="currentSpeaker">
+ User ID: {{currentSpeaker.id}} <br/>
+  <p *ngIf="currentSpeaker.pool > 1 "> You own {{currentSpeaker.pool}} pools</p>
+  <p *ngIf="currentSpeaker.pool < 2 ">  You own {{currentSpeaker.pool}} pool</p>
+</div>
+

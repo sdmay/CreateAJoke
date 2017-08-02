@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-ngstyle',
@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ngstyle.component.scss']
 })
 export class NgstyleComponent implements OnInit {
+  fizzy;
+  r = window.onresize;
+  iW;
+  oW;
+  px = 90;
+
   people: any[] = [{
     "name": "Douglas  Pace","age": 35, "country": 'MARS'},
     {"name": "Mcleod  Mueller", "age": 32, "country": 'USA'},
@@ -13,7 +19,23 @@ export class NgstyleComponent implements OnInit {
     {"name": "Aguirre  Ellis", "age": 34, "country": 'UK'},
     {"name": "Cook  Tyson", "age": 32, "country": 'USA'}
   ];
-  constructor() { }
+  constructor(private n: NgZone) {
+    window.onresize = (e) =>
+    {
+      // (window.outerWidth - window.innerWidth) > this.px
+      n.run(() => {
+        this.iW = window.innerWidth;
+        this.oW = window.outerWidth;
+        // console.log(this.iW);
+        // console.log(this.oW + 'p');
+        // console.log(this.r);
+        // console.log(e)
+        if ((this.oW - this.iW) < 100) {
+          alert('Why you fucking with the window?');
+              }
+      })
+    }
+  }
   getColor(country) {
     switch (country) {
       case 'UK':
@@ -61,6 +83,19 @@ addBoxShadow(country) {
 }
 
   ngOnInit() {
+    this.wow();
   }
+
+wow() {
+  for (let i = 1; i <= 100; i++) {
+    const f = i % 3 === 0, b = i % 5 === 0;
+    console.log(
+      f && b ? 'FizzBuzz'
+        : f ? 'Fizz'
+        : b ? 'Buzz'
+          : i
+    );
+  }
+}
 
 }

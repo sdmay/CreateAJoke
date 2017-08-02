@@ -1,0 +1,5 @@
+
+<div class="card card-block"
+    *ngFor="let speaker of speakers"
+  >{{speaker.pool}}<button (click)="showBio(speaker.id)">Show Bio</button>
+</div>
