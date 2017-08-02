@@ -9,3 +9,5 @@
     {{person.name}} {{person.country}} ({{person.age}})
   </li>
 </ul>
+<div class="card-block" *ngFor="let a of l">
+  <button (click)="history($event)" class="btn btn-success" id="{{a}}">{{a}}</button></div>

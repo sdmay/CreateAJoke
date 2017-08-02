@@ -6,12 +6,15 @@ import { Component, OnInit, NgZone } from '@angular/core';
   styleUrls: ['./ngstyle.component.scss']
 })
 export class NgstyleComponent implements OnInit {
+  clicker;
+  cookie;
   fizzy;
   r = window.onresize;
   iW;
   oW;
   px = 90;
-
+  hist;
+  l = [];
   people: any[] = [{
     "name": "Douglas  Pace","age": 35, "country": 'MARS'},
     {"name": "Mcleod  Mueller", "age": 32, "country": 'USA'},
@@ -20,6 +23,11 @@ export class NgstyleComponent implements OnInit {
     {"name": "Cook  Tyson", "age": 32, "country": 'USA'}
   ];
   constructor(private n: NgZone) {
+    this.hist = window.history.length;
+   console.log(this.hist);
+   for (let i = 1; i <= this.hist; i++ ) {
+     this.l.push(i);
+   }
     window.onresize = (e) =>
     {
       // (window.outerWidth - window.innerWidth) > this.px
@@ -30,8 +38,9 @@ export class NgstyleComponent implements OnInit {
         // console.log(this.oW + 'p');
         // console.log(this.r);
         // console.log(e)
-        if ((this.oW - this.iW) < 100) {
-          alert('Why you fucking with the window?');
+        if ((this.oW - this.iW) < 600) {
+          // alert('Why you messing with the window?');
+
               }
       })
     }
@@ -83,19 +92,28 @@ addBoxShadow(country) {
 }
 
   ngOnInit() {
-    this.wow();
+    // this.wow();
+    // this.cookie = cookies.getAll();
   }
 
-wow() {
-  for (let i = 1; i <= 100; i++) {
-    const f = i % 3 === 0, b = i % 5 === 0;
-    console.log(
-      f && b ? 'FizzBuzz'
-        : f ? 'Fizz'
-        : b ? 'Buzz'
-          : i
-    );
+// wow() {
+//   for (let i = 1; i <= 100; i++) {
+//     const f = i % 3 === 0, b = i % 5 === 0;
+//     console.log(
+//       f && b ? 'FizzBuzz'
+//         : f ? 'Fizz'
+//         : b ? 'Buzz'
+//           : i
+//     );
+//   }
+// }
+  history(event: any): any {
+console.log('click');
+this.clicker = event.target.id;
+console.log(this.clicker);
+    window.history.go(-this.clicker);
+    return false;
+    // console.log('out');
   }
-}
 
 }

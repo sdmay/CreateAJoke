@@ -16,19 +16,9 @@ headers;
 constructor(private http: Http) { }
 
   ngOnInit() {
-  console.log('thisisin');
-  // console.log(this.muscleSearch);
-  // this.getMuscle();
+
   }
-// getMuscle(): any {
-//
-//     return this.http.get(this.muscleSearch).subscribe(x => {
-//       console.log('init');
-//       console.log(x);
-//       this.m = x.json();
-//       console.log(this.m)
-//     })
-// }
+
 
 
 }

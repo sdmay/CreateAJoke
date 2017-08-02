@@ -6,3 +6,33 @@
   <li *ngSwitchCase="'USA'"       class="text-primary">{{ person.name }} ({{ person.country }})   </li>
   <li *ngSwitchCase="'HK'"       class="text-danger">{{ person.name }} ({{ person.country }})   </li>
   <li *ngSwitchDefault       class="text-warning">{{ person.name }} ({{ person.country }})   </li> </ul>
+<input #name type="text" placeholder="Name">
+
+<input #enemy type="text" placeholder="Enemy Name">
+<div class="messages">
+  <div class="off" *ngIf="isOpen">
+  {{fuck.message}}
+  {{fuck.subtitle}}
+
+</div>
+
+<br/>
+<div class="that" *ngIf="isOpenThat">
+  {{that.message}}
+  {{that.subtitle}}
+</div>
+<div class="donut" *ngIf="donut">
+{{donny.message}}
+  {{donny.subtitle}}
+</div>
+  <div class="everything" *ngIf="everythingOpen">
+    {{everything.message}}
+    {{everything.subtitle}}
+  </div>
+</div>
+<div class="pad">
+  <button (click)="getDonut(name, enemy)" class="btn-outline-primary">Donut</button>
+<button (click)="getOff()" class="btn-outline-primary">OFF</button>
+<button (click)="getThat()" class="btn-outline-primary">THAT</button>
+  <button (click)="getEverything(name)" class="btn-outline-primary">Everything</button>
+</div>

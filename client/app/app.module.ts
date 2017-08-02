@@ -25,6 +25,7 @@ import {SpeakerService} from './shared/speaker.service';
 import { PeopleComponent } from './people/people.component';
 import {PeepService} from './services/peep.service'
 import {SortingPipe} from "./shared/sorting.pipe";
+import {SwitchService} from "./services/switch.service"
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import {SortingPipe} from "./shared/sorting.pipe";
     HealthService,
     SpeakerService,
     PeepService,
-    SortingPipe
+    SortingPipe,
+    SwitchService
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
