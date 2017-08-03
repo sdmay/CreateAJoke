@@ -1,0 +1,24 @@
+<h1>Has your email been hacked? Check Now!</h1>
+<input #name placeholder="Email"  required
+       pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+       type="email"
+       (keyup.enter)="emailCheck(name)"
+       email>
+<button (click)="emailCheck(name)">Check</button>
+<div *ngIf="xer"> Your({{b}}) email has been exposed by:
+<div class="card" *ngFor="let y of x">
+<div >You joined {{y.Title}} on {{y.AddedDate}}
+<br/>
+  On: {{y.BreachDate}} they were breached.
+  <br/>
+  Official word: <span [innerHTML]="y.Description"></span>
+</div>
+</div>
+</div>
+<div *ngIf="wrong">
+
+  You have not experienced a data breach.
+  <br/>
+ According to the search, your email({{b}}) was: {{error.statusText}}
+
+</div>

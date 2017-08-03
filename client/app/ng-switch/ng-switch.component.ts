@@ -95,10 +95,13 @@ getOff(): any {
       })
   }
   getEverything(x: HTMLInputElement): any {
-    console.log(x.value)
+    console.log(x.value);
     if (x.value === '') {
+      alert('fill it in');
+
       return false;
     }
+    // console.log('ppooo;;;')
     this.isOpen = false;
     this.isOpenThat = false;
     this.donut = false;

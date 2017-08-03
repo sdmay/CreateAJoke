@@ -25,7 +25,10 @@ import {SpeakerService} from './shared/speaker.service';
 import { PeopleComponent } from './people/people.component';
 import {PeepService} from './services/peep.service'
 import {SortingPipe} from "./shared/sorting.pipe";
-import {SwitchService} from "./services/switch.service"
+import {SwitchService} from "./services/switch.service";
+import {MovieService} from "./services/movie.service";
+import { TesterComponent } from './tester/tester.component';
+import {TesterService} from "./services/tester.service"
 
 @NgModule({
   declarations: [
@@ -44,7 +47,8 @@ import {SwitchService} from "./services/switch.service"
     SpeakerComponent,
     BioComponent,
     SpeakersListComponent,
-    PeopleComponent
+    PeopleComponent,
+    TesterComponent
   ],
   imports: [
     RoutingModule,
@@ -55,7 +59,9 @@ import {SwitchService} from "./services/switch.service"
     SpeakerService,
     PeepService,
     SortingPipe,
-    SwitchService
+    SwitchService,
+    MovieService,
+    TesterService
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

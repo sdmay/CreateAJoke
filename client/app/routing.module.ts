@@ -14,6 +14,7 @@ import {BioComponent} from './speaker/bio/bio.component';
 import {SpeakersListComponent} from './speaker/speakers-list/speakers-list.component';
 import { SpeakerComponent} from './speaker/speaker.component';
 import {PeopleComponent} from "./people/people.component";
+import {TesterComponent} from "./tester/tester.component"
 
 const routes: Routes = [
   { path: '', redirectTo: 'joke', pathMatch: 'full' },
@@ -30,7 +31,9 @@ const routes: Routes = [
     { path: 'speakersList', component: SpeakersListComponent, outlet: 'list' },
     { path: ':id', component: BioComponent, outlet: 'bio' }
   ] },
-  {path: 'people', component: PeopleComponent}
+  {path: 'people', component: PeopleComponent},
+  {path: 'movie', component: GeneticComponent},
+  {path: 'tester', component: TesterComponent}
 ];
 
 @NgModule({
